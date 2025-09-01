@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Asystent Inwestora</title>
+</head>
+<body>
+    <h1>Aktualne ceny akcji</h1>
+    <ul>
+        {% for stock in portfolio %}
+            <li>
+                {{ stock.symbol }}: {{ stock.price }} PLN
+                <a href="/wykres/{{ stock.symbol }}">Pokaż wykres</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
